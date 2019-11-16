@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # An ethereum powered decentralized peer-to-peer marketplace for specialized machine learning capabilities
 Jaidev Shah
 Tri Do
@@ -33,7 +32,3 @@ node index.js
 ```
 Client portal can be found at localhost:3000/buyer
 Seller portal can be found at localhost:3000/seller
-
-=======
-# codemarketplace
->>>>>>> 9c05bddb6c8d4ec2239d633c39ec47dac0bd0159
