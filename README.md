@@ -17,8 +17,8 @@ https://docs.google.com/document/d/1Y38q-gOd3_OpOm4WSkRajqSo30k67jjiD1BUYlL3f_o/
 ## Setup
 ```
 npm install -g truffle
-git clone https://github.com/tko22/eth-voting-dapp.git
-cd eth-voting-dapp
+git clone https://github.com/dominhtri1995/codemarketplace.git
+cd codemarketplace
 npm install
 ```
 Then, open up a new terminal tab:
@@ -29,7 +29,7 @@ truffle develop
 ```
 Go back to your previous tab:
 ```
-npm run dev
+node index.js
 ```
 
 
