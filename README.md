@@ -31,7 +31,8 @@ Go back to your previous tab:
 ```
 node index.js
 ```
-
+Client portal can be found at localhost:3000/buyer
+Seller portal can be found at localhost:3000/seller
 
 =======
 # codemarketplace
