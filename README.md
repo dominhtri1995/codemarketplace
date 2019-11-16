@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # An ethereum powered decentralized peer-to-peer marketplace for specialized machine learning capabilities
 Jaidev Shah
 Tri Do
@@ -32,3 +33,6 @@ npm run dev
 ```
 
 
+=======
+# codemarketplace
+>>>>>>> 9c05bddb6c8d4ec2239d633c39ec47dac0bd0159
