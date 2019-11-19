@@ -15,9 +15,9 @@ ID = str(os.path.split(args.path)[-1])
 print('Preprocessing code repository...')
 subprocess.call('bash preprocess.sh %s %s' % (args.path, ID),
                 shell=True,
-                cwd='code2vec',
-                stdout=open('/dev/null', 'w'),
-                stderr=open('/dev/null', 'w'))
+                cwd='code2vec')
+                #stdout=open('/dev/null', 'w'),
+                #stderr=open('/dev/null', 'w'))
 
 print('Calculating code2vec vectors...')
 subprocess.call('python3.7 code2vec.py ' +

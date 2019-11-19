@@ -119,6 +119,16 @@ contract CodeContract {
         return (products[product_id].name, products[product_id].description, products[product_id].price, products[product_id].active, products[product_id].seller_id, getProductRating(product_id), products[product_id].img);
     }
 
+    function getNumOfPurchase(uint product_id) public view returns (int) {
+        int count = 0 ;
+        for (uint i = 0; i < transactionCount; i++) {
+            if(transactions[i].product_id == product_id && transactions[i].state == State.Success) {
+                 count += 1;
+            }
+        }
+        return count;
+    }
+
     function getBuyerById(uint buyer_id) public view returns (uint,address) {
         return (buyer_id, buyers[buyer_id].public_address);
     }

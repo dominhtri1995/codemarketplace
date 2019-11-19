@@ -14,7 +14,8 @@ class AppMain extends React.Component {
             let products = []
             for (let i = 0; i < window.numOfProducts; i++) {
                 let productPromise = instance.getProductById(i)
-                Promise.all([productPromise]).then(function (data) {
+                let productPurchasePromise = instance.getNumOfPurchase(i)
+                Promise.all([productPromise, productPurchasePromise]).then(function (data) {
                     console.log(data)
                     products.push({
                         id: i,
@@ -25,6 +26,7 @@ class AppMain extends React.Component {
                         seller: data[0][4].toNumber(),
                         rating: data[0][5].toNumber(),
                         img: data[0][6],
+                        numOfPurchase: data[1].toNumber(),
                     })
                     thisComponent.setState({products: products})
                 }).catch(function (err) {
@@ -87,7 +89,7 @@ class AppMain extends React.Component {
             <div className="container" style={{paddingTop: '25px', paddingBottom: '25px'}}>
                 <div className="row">
                     <div style={{paddingTop: '25px', paddingBottom: '25px'}}>
-                        <h1 className="text-center">Buyer Portal</h1>
+                        <h1 className="text-center">TensorPlace - Buyer Portal</h1>
                         <hr/>
                         <br/>
                         <div className="py-3">
@@ -103,6 +105,7 @@ class AppMain extends React.Component {
                                             <p>{value.description}</p>
                                             <p>Price: {value.price} (WEI)</p>
                                             <p>Rating: {value.rating}</p>
+                                            <p>Number of Purchase: {value.numOfPurchase}</p>
                                             <div className="rating">
                                                 <div className="like grow"
                                                      onClick={this.rateProduct.bind(this, index, 1)}>

@@ -234,7 +234,7 @@ function (_React$Component) {
         className: "col-sm-15 text-center"
       }, React.createElement("h1", {
         className: ""
-      }, "Seller Portal"))), React.createElement("div", {
+      }, "TensorPlace - Seller Portal"))), React.createElement("div", {
         className: "row",
         style: {
           paddingTop: '25px',
@@ -246,7 +246,7 @@ function (_React$Component) {
         onSubmit: this.addProduct.bind(this)
       }, React.createElement("fieldset", {
         className: ""
-      }, React.createElement("h2", null, "Add New Product"), React.createElement("label", null, "Product Name:"), React.createElement("input", {
+      }, React.createElement("h2", null, "Add New Repo"), React.createElement("label", null, "Product Name:"), React.createElement("input", {
         type: "text",
         name: "name"
       }), React.createElement("label", null, "Product description:"), React.createElement("input", {
@@ -259,16 +259,16 @@ function (_React$Component) {
         type: "text",
         name: "img",
         defaultValue: "https://miro.medium.com/max/684/1*hCBt5o0qcVwga4pxPzIoUw.png"
-      }), React.createElement("label", null, "Code:"), React.createElement("textarea", {
-        name: "code",
-        rows: 10
+      }), React.createElement("label", null, "Github Repo:"), React.createElement("input", {
+        type: "text",
+        name: "code"
       }), React.createElement("button", {
         className: "btn btn-success",
         style: {
           minWidth: '150px'
         },
         type: "submit"
-      }, "Add Product")))), React.createElement("div", {
+      }, "Add Repo")))), React.createElement("div", {
         className: "col-lg-6 floating-div"
       }, React.createElement("div", {
         className: "text-center"

@@ -119,7 +119,8 @@ function (_React$Component) {
 
         var _loop = function _loop(i) {
           var productPromise = instance.getProductById(i);
-          Promise.all([productPromise]).then(function (data) {
+          var productPurchasePromise = instance.getNumOfPurchase(i);
+          Promise.all([productPromise, productPurchasePromise]).then(function (data) {
             console.log(data);
             products.push({
               id: i,
@@ -129,7 +130,8 @@ function (_React$Component) {
               status: data[0][3],
               seller: data[0][4].toNumber(),
               rating: data[0][5].toNumber(),
-              img: data[0][6]
+              img: data[0][6],
+              numOfPurchase: data[1].toNumber()
             });
             thisComponent.setState({
               products: products
@@ -221,7 +223,7 @@ function (_React$Component) {
         }
       }, React.createElement("h1", {
         className: "text-center"
-      }, "Buyer Portal"), React.createElement("hr", null), React.createElement("br", null), React.createElement("div", {
+      }, "TensorPlace - Buyer Portal"), React.createElement("hr", null), React.createElement("br", null), React.createElement("div", {
         className: "py-3"
       }, this.state.products.map(function (value, index) {
         return React.createElement("div", {
@@ -235,7 +237,7 @@ function (_React$Component) {
           height: 200
         }), React.createElement("div", {
           className: "ml-3"
-        }, React.createElement("h2", null, value.name), React.createElement("p", null, value.description), React.createElement("p", null, "Price: ", value.price, " (WEI)"), React.createElement("p", null, "Rating: ", value.rating), React.createElement("div", {
+        }, React.createElement("h2", null, value.name), React.createElement("p", null, value.description), React.createElement("p", null, "Price: ", value.price, " (WEI)"), React.createElement("p", null, "Rating: ", value.rating), React.createElement("p", null, "Number of Purchase: ", value.numOfPurchase), React.createElement("div", {
           className: "rating"
         }, React.createElement("div", {
           className: "like grow",

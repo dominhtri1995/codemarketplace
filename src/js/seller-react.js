@@ -94,7 +94,7 @@ class AppMain extends React.Component {
             <div className="container" style={{paddingTop: '25px', paddingBottom: '25px'}}>
                 <div className="row" style={{paddingTop: '25px', paddingBottom: '25px'}}>
                     <div className="col-sm-15 text-center">
-                        <h1 className="">Seller Portal</h1>
+                        <h1 className="">TensorPlace - Seller Portal</h1>
                         {/*<button className="btn btn-success ml-3" style={{minWidth: '200px'}}*/}
                         {/*        onClick={this.registerSeller.bind(this)}>Register Seller*/}
                         {/*</button>*/}
@@ -104,7 +104,7 @@ class AppMain extends React.Component {
                     <div className="col-lg-6 py-3 floating-div">
                         <form onSubmit={this.addProduct.bind(this)}>
                             <fieldset className="">
-                                <h2>Add New Product</h2>
+                                <h2>Add New Repo</h2>
                                 <label>Product Name:</label>
                                 <input type="text" name="name"/>
                                 <label>Product description:</label>
@@ -114,10 +114,10 @@ class AppMain extends React.Component {
                                 <label>Image:</label>
                                 <input type="text" name="img"
                                        defaultValue={"https://miro.medium.com/max/684/1*hCBt5o0qcVwga4pxPzIoUw.png"}/>
-                                <label>Code:</label>
-                                <textarea name="code" rows={10}/>
+                                <label>Github Repo:</label>
+                                <input type="text" name="code"/>
                                 <button className="btn btn-success" style={{minWidth: '150px'}} type="submit">
-                                    Add Product
+                                    Add Repo
                                 </button>
                             </fieldset>
                         </form>
