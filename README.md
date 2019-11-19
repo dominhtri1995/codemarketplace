@@ -1,5 +1,7 @@
-<<<<<<< HEAD
 # An ethereum powered decentralized peer-to-peer marketplace for specialized machine learning capabilities
+
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)]
+ 
 Jaidev Shah
 Tri Do
 Uzay Macar
@@ -17,8 +19,8 @@ https://docs.google.com/document/d/1Y38q-gOd3_OpOm4WSkRajqSo30k67jjiD1BUYlL3f_o/
 ## Setup
 ```
 npm install -g truffle
-git clone https://github.com/tko22/eth-voting-dapp.git
-cd eth-voting-dapp
+git clone https://github.com/dominhtri1995/codemarketplace.git
+cd codemarketplace
 npm install
 ```
 Then, open up a new terminal tab:
@@ -29,10 +31,7 @@ truffle develop
 ```
 Go back to your previous tab:
 ```
-npm run dev
+node index.js
 ```
-
-
-=======
-# codemarketplace
->>>>>>> 9c05bddb6c8d4ec2239d633c39ec47dac0bd0159
+Client portal can be found at localhost:3000/buyer
+Seller portal can be found at localhost:3000/seller
