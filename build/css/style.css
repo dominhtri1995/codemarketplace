@@ -1,0 +1,242 @@
+html {
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    overflow: auto;
+    font-size: 14px;
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/glyphicons-halflings-regular.eot);
+    src: url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/glyphicons-halflings-regular.woff2) format('woff2'), url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/glyphicons-halflings-regular.woff) format('woff'), url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')
+}
+
+@font-face {
+    font-family: Circular;
+    src: url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-light.woff2) format('woff2'), url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-light.woff) format('woff');
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Circular;
+    src: url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-book.woff2) format('woff2'), url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-book.woff) format('woff');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Circular;
+    src: url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-medium.woff2) format('woff2'), url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-medium.woff) format('woff');
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Circular;
+    src: url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-bold.woff2) format('woff2'), url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-bold.woff) format('woff');
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Circular;
+    src: url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-black.woff2) format('woff2'), url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-black.woff) format('woff');
+    font-weight: 900;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Circular;
+    src: url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-medium.woff2) format('woff2'), url(https://sp-bootstrap.global.ssl.fastly.net/8.2.4/fonts/circular-medium.woff) format('woff');
+    font-weight: 500;
+    font-style: normal
+}
+
+::-webkit-input-placeholder {
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+/* Chrome <=56, Safari < 10 */
+:-moz-placeholder {
+    opacity: 1;
+    -moz-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+/* FF 4-18 */
+::-moz-placeholder {
+    opacity: 1;
+    -moz-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+/* FF 19-51 */
+:-ms-input-placeholder {
+    opacity: 1;
+    -ms-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+/* IE 10+ */
+::placeholder {
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+/* Modern Browsers */
+
+*:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+/* Chrome <=56, Safari < 10 */
+*:focus:-moz-placeholder {
+    opacity: 0;
+}
+
+/* FF 4-18 */
+*:focus::-moz-placeholder {
+    opacity: 0;
+}
+
+/* FF 19-50 */
+*:focus:-ms-input-placeholder {
+    opacity: 0;
+}
+
+/* IE 10+ */
+*:focus::placeholder {
+    opacity: 0;
+}
+
+/* Modern Browsers */
+
+body {
+    min-height: 100%;
+    background-color: #222222;
+    margin: 0;
+    color: white;
+}
+
+.zero {
+    padding: 0;
+    margin: 0;
+}
+
+input, button {
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.blur {
+    opacity: 0.3;
+}
+
+.visible {
+    display: block;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-33 {
+    width: 33%;
+}
+
+.w-35 {
+    width: 35%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.slightly-big {
+    font-size: 1.1rem;
+}
+
+.normal-font-size {
+    font-size: 1rem;
+}
+
+.slightly-small {
+    font-size: 0.9rem;
+}
+
+.btn {
+    border-radius: 500px;
+    font-weight: bold;
+}
+
+.product-display {
+    display: flex;
+    position: relative;
+    padding: 40px 30px 38px 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.product-display:hover, .floating-div:hover {
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.01, 1.01);
+}
+
+.floating-div {
+    position: relative;
+    padding: 40px 30px 38px 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input, textarea {
+    background-color: #252525;
+    padding: 5px 12px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    width: 100%;
+    color: #fff;
+    outline: none;
+}
+
+.rating {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.like,
+.dislike {
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.dislike:hover,
+.like:hover {
+    color: #2EBDD1;
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
+}
