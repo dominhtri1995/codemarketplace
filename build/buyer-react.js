@@ -122,19 +122,23 @@ function (_React$Component) {
           var productPurchasePromise = instance.getNumOfPurchase(i);
           Promise.all([productPromise, productPurchasePromise]).then(function (data) {
             console.log(data);
-            products.push({
-              id: i,
-              name: data[0][0],
-              description: data[0][1],
-              price: data[0][2].toNumber(),
-              status: data[0][3],
-              seller: data[0][4].toNumber(),
-              rating: data[0][5].toNumber(),
-              img: data[0][6],
-              numOfPurchase: data[1].toNumber()
-            });
-            thisComponent.setState({
-              products: products
+            instance.getTIndex(data[0][4].toNumber()).then(function (result) {
+              console.log('t-index', result.toNumber());
+              products.push({
+                id: i,
+                name: data[0][0],
+                description: data[0][1],
+                price: data[0][2].toNumber(),
+                status: data[0][3],
+                seller: data[0][4].toNumber(),
+                rating: data[0][5].toNumber(),
+                img: data[0][6],
+                numOfPurchase: data[1].toNumber(),
+                tindex: result.toNumber()
+              });
+              thisComponent.setState({
+                products: products
+              });
             });
           })["catch"](function (err) {
             console.error("ERROR! " + err.message);
@@ -237,7 +241,7 @@ function (_React$Component) {
           height: 200
         }), React.createElement("div", {
           className: "ml-3"
-        }, React.createElement("h2", null, value.name), React.createElement("p", null, value.description), React.createElement("p", null, "Price: ", value.price, " (WEI)"), React.createElement("p", null, "Rating: ", value.rating), React.createElement("p", null, "Number of Purchase: ", value.numOfPurchase), React.createElement("div", {
+        }, React.createElement("h2", null, value.name), React.createElement("p", null, value.description), React.createElement("p", null, "Price: ", value.price, " (WEI)"), React.createElement("p", null, "Rating: ", value.rating), React.createElement("p", null, "Number of Purchase: ", value.numOfPurchase), React.createElement("p", null, "T-index : ", value.tindex), React.createElement("div", {
           className: "rating"
         }, React.createElement("div", {
           className: "like grow",

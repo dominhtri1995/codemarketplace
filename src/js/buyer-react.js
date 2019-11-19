@@ -17,18 +17,24 @@ class AppMain extends React.Component {
                 let productPurchasePromise = instance.getNumOfPurchase(i)
                 Promise.all([productPromise, productPurchasePromise]).then(function (data) {
                     console.log(data)
-                    products.push({
-                        id: i,
-                        name: data[0][0],
-                        description: data[0][1],
-                        price: data[0][2].toNumber(),
-                        status: data[0][3],
-                        seller: data[0][4].toNumber(),
-                        rating: data[0][5].toNumber(),
-                        img: data[0][6],
-                        numOfPurchase: data[1].toNumber(),
+
+                    instance.getTIndex(data[0][4].toNumber()).then(function (result) {
+                        console.log('t-index', result.toNumber())
+                        products.push({
+                            id: i,
+                            name: data[0][0],
+                            description: data[0][1],
+                            price: data[0][2].toNumber(),
+                            status: data[0][3],
+                            seller: data[0][4].toNumber(),
+                            rating: data[0][5].toNumber(),
+                            img: data[0][6],
+                            numOfPurchase: data[1].toNumber(),
+                            tindex: result.toNumber()
+                        })
+                        thisComponent.setState({products: products})
                     })
-                    thisComponent.setState({products: products})
+
                 }).catch(function (err) {
                     console.error("ERROR! " + err.message)
                 })
@@ -106,6 +112,7 @@ class AppMain extends React.Component {
                                             <p>Price: {value.price} (WEI)</p>
                                             <p>Rating: {value.rating}</p>
                                             <p>Number of Purchase: {value.numOfPurchase}</p>
+                                            <p>T-index : {value.tindex}</p>
                                             <div className="rating">
                                                 <div className="like grow"
                                                      onClick={this.rateProduct.bind(this, index, 1)}>

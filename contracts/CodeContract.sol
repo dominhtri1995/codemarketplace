@@ -25,6 +25,8 @@ contract CodeContract {
     struct Seller {
         address payable public_address;
         uint id;
+        uint productTotal;
+        mapping(uint => uint) myproducts;
     }
 
     struct Product {
@@ -35,6 +37,7 @@ contract CodeContract {
         bool active;
         uint id;
         uint seller_id;
+        uint transactionCount;
         mapping(uint => int) ratings;
     }
 
@@ -80,6 +83,7 @@ contract CodeContract {
 
         // Send money and update transaction list
         Product memory p = products[transactions[transaction_id].product_id];
+        products[transactions[transaction_id].product_id].transactionCount += 1;
         sellers[p.seller_id].public_address.transfer(p.price);
         transactions[transaction_id].state = State.Success;
     }
@@ -129,6 +133,28 @@ contract CodeContract {
         return count;
     }
 
+    function getTIndex (uint sid) public view returns (uint) {
+        uint n = sellers[sid].productTotal;
+        uint[] memory buckets = new uint[](n+1);
+
+        for(uint i =0 ; i < sellers[sid].productTotal; i++) {
+            if(products[sellers[sid].myproducts[i]].transactionCount >= sellers[sid].productTotal) {
+                buckets[sellers[sid].productTotal] += 1;
+            } else {
+                buckets[products[sellers[sid].myproducts[i]].transactionCount] += 1;
+            }
+        }
+
+        uint count = 0;
+        for(uint i = sellers[sid].productTotal; i >= 0; i--) {
+            count += buckets[i];
+            if(count >= i) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
     function getBuyerById(uint buyer_id) public view returns (uint,address) {
         return (buyer_id, buyers[buyer_id].public_address);
     }
@@ -169,13 +195,16 @@ contract CodeContract {
             }
         }
 
-        sellers[sellerCount] = Seller(msg.sender,sellerCount);
+        sellers[sellerCount] = Seller(msg.sender,sellerCount,0);
         sellerCount += 1;
     }
 
     function registerProduct(string memory name, string memory description, string memory img, uint price, uint seller_id) public onlyOwner {
-        products[productCount] = Product(name, description, img, price, true, productCount, seller_id);
+        products[productCount] = Product(name, description, img, price, true, productCount, seller_id, 0);
+        sellers[seller_id].myproducts[sellers[seller_id].productTotal] = products[productCount].id;
         productCount += 1;
+        sellers[seller_id].productTotal += 1;
+
     }
 
     function getBalance() public view returns(uint256) {
